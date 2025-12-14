@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "project", "project", "{EB1B1211-640D-0C76-A929-990D115248FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{6429A08D-2F1D-8CCF-69A9-5920C692C698}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Healthcare.Api", "project\backend\Healthcare.Api\Healthcare.Api.csproj", "{98558CC5-703A-5825-F40A-21EAF6426F52}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98558CC5-703A-5825-F40A-21EAF6426F52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98558CC5-703A-5825-F40A-21EAF6426F52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98558CC5-703A-5825-F40A-21EAF6426F52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98558CC5-703A-5825-F40A-21EAF6426F52}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6429A08D-2F1D-8CCF-69A9-5920C692C698} = {EB1B1211-640D-0C76-A929-990D115248FD}
+		{98558CC5-703A-5825-F40A-21EAF6426F52} = {6429A08D-2F1D-8CCF-69A9-5920C692C698}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {585548DB-74AB-40D4-9B4C-85D61C63C870}
+	EndGlobalSection
+EndGlobal

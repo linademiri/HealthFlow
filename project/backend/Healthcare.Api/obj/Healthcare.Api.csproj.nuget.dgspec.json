@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\klina\\Desktop\\Ecommerse projekt\\HealthFlow\\project\\backend\\Healthcare.Api\\Healthcare.Api.csproj": {}
+    "C:\\Users\\klina\\Desktop\\New folder\\HealthFlow\\project\\backend\\Healthcare.Api\\Healthcare.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\klina\\Desktop\\Ecommerse projekt\\HealthFlow\\project\\backend\\Healthcare.Api\\Healthcare.Api.csproj": {
+    "C:\\Users\\klina\\Desktop\\New folder\\HealthFlow\\project\\backend\\Healthcare.Api\\Healthcare.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\klina\\Desktop\\Ecommerse projekt\\HealthFlow\\project\\backend\\Healthcare.Api\\Healthcare.Api.csproj",
+        "projectUniqueName": "C:\\Users\\klina\\Desktop\\New folder\\HealthFlow\\project\\backend\\Healthcare.Api\\Healthcare.Api.csproj",
         "projectName": "Healthcare.Api",
-        "projectPath": "C:\\Users\\klina\\Desktop\\Ecommerse projekt\\HealthFlow\\project\\backend\\Healthcare.Api\\Healthcare.Api.csproj",
+        "projectPath": "C:\\Users\\klina\\Desktop\\New folder\\HealthFlow\\project\\backend\\Healthcare.Api\\Healthcare.Api.csproj",
         "packagesPath": "C:\\Users\\klina\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\klina\\Desktop\\Ecommerse projekt\\HealthFlow\\project\\backend\\Healthcare.Api\\obj\\",
+        "outputPath": "C:\\Users\\klina\\Desktop\\New folder\\HealthFlow\\project\\backend\\Healthcare.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

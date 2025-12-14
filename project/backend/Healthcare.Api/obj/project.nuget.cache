@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9a12eqGDEIg=",
+  "dgSpecHash": "xFjzlEqcAQY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\klina\\Desktop\\Ecommerse projekt\\HealthFlow\\project\\backend\\Healthcare.Api\\Healthcare.Api.csproj",
+  "projectFilePath": "C:\\Users\\klina\\Desktop\\New folder\\HealthFlow\\project\\backend\\Healthcare.Api\\Healthcare.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\klina\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.0\\microsoft.aspnetcore.openapi.10.0.0.nupkg.sha512",
     "C:\\Users\\klina\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
