@@ -6,8 +6,9 @@ import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Sidebar from "./Sidebar";
-import emailjs from "emailjs-com"; // Import EmailJS
+//import emailjs from "emailjs-com"; // Import EmailJS
 import EmailSender from "./EmailSender";
+import emailjs from '@emailjs/browser';
 
 
 const Invoice = () => {
@@ -173,7 +174,7 @@ const Invoice = () => {
     <p><strong>Tax:</strong> ${formatCurrency(invoiceDetails.tax)} Euro</p>
     <p><strong>Total:</strong> ${formatCurrency(invoiceDetails.grandTotal)} Euro</p>
     `;
-       
+
 
         const emailParams = {
             patient_name: `${invoiceDetails.patient.name} ${invoiceDetails.patient.surname}`,
@@ -204,7 +205,7 @@ const Invoice = () => {
                 if (!(validateEmail(recipientEmail))) {
                     alert("Please provide a valid email", error);
                 }
-               
+
 
             });
 
@@ -315,7 +316,7 @@ const Invoice = () => {
                                     >
                                         Send via Email
                                     </Button> <br></br><br></br>
-                                    
+
                                     {/* Show EmailSender component if email is sent */}
                                     {emailSent && <EmailSender />}
                                 </>
