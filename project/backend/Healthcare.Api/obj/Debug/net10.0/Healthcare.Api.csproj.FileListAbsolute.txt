@@ -32,3 +32,15 @@ C:\Users\klina\Desktop\Ecommerse projekt\HealthFlow\project\backend\Healthcare.A
 C:\Users\klina\Desktop\Ecommerse projekt\HealthFlow\project\backend\Healthcare.Api\obj\Debug\net10.0\Healthcare.Api.pdb
 C:\Users\klina\Desktop\Ecommerse projekt\HealthFlow\project\backend\Healthcare.Api\obj\Debug\net10.0\Healthcare.Api.genruntimeconfig.cache
 C:\Users\klina\Desktop\Ecommerse projekt\HealthFlow\project\backend\Healthcare.Api\obj\Debug\net10.0\ref\Healthcare.Api.dll
+C:\Users\Acer\OneDrive\Documents\E-commerce\HealthFlow\project\backend\Healthcare.Api\obj\Debug\net10.0\Healthcare.Api.csproj.AssemblyReference.cache
+C:\Users\Acer\OneDrive\Documents\E-commerce\HealthFlow\project\backend\Healthcare.Api\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\Acer\OneDrive\Documents\E-commerce\HealthFlow\project\backend\Healthcare.Api\obj\Debug\net10.0\Healthcare.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Acer\OneDrive\Documents\E-commerce\HealthFlow\project\backend\Healthcare.Api\obj\Debug\net10.0\Healthcare.Api.AssemblyInfoInputs.cache
+C:\Users\Acer\OneDrive\Documents\E-commerce\HealthFlow\project\backend\Healthcare.Api\obj\Debug\net10.0\Healthcare.Api.AssemblyInfo.cs
+C:\Users\Acer\OneDrive\Documents\E-commerce\HealthFlow\project\backend\Healthcare.Api\obj\Debug\net10.0\Healthcare.Api.csproj.CoreCompileInputs.cache
+C:\Users\Acer\OneDrive\Documents\E-commerce\HealthFlow\project\backend\Healthcare.Api\obj\Debug\net10.0\Healthcare.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Acer\OneDrive\Documents\E-commerce\HealthFlow\project\backend\Healthcare.Api\obj\Debug\net10.0\Healthcare.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Acer\OneDrive\Documents\E-commerce\HealthFlow\project\backend\Healthcare.Api\obj\Debug\net10.0\Healthcare.Api.sourcelink.json
+C:\Users\Acer\OneDrive\Documents\E-commerce\HealthFlow\project\backend\Healthcare.Api\obj\Debug\net10.0\Healthcare.Api.dll
+C:\Users\Acer\OneDrive\Documents\E-commerce\HealthFlow\project\backend\Healthcare.Api\obj\Debug\net10.0\refint\Healthcare.Api.dll
+C:\Users\Acer\OneDrive\Documents\E-commerce\HealthFlow\project\backend\Healthcare.Api\obj\Debug\net10.0\Healthcare.Api.pdb
