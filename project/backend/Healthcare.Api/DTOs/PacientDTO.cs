@@ -1,4 +1,5 @@
-﻿namespace ReactApp1.Server.DTOs
+﻿// DTO for Patient
+namespace ReactApp1.Server.DTOs
 {
     public class PacientDTO
     {
