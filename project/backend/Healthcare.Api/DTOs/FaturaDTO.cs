@@ -1,4 +1,5 @@
-﻿namespace ReactApp1.Server.DTOs
+﻿// DTO for Invoice/Billing
+namespace ReactApp1.Server.DTOs
 {
     public class FaturaDTO
     {
