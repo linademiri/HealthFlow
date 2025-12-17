@@ -1,5 +1,6 @@
 ﻿using ReactApp1.Server.Data.Models;
 
+// DTO for Medical History
 namespace ReactApp1.Server.DTOs
 {
     public class HistorikuDTO
