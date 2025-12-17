@@ -1,4 +1,5 @@
-﻿namespace ReactApp1.Server.DTOs
+﻿// DTO for Room
+namespace ReactApp1.Server.DTOs
 {
     public class DhomaDTO
     {
