@@ -10,7 +10,7 @@ public class ApplicationDbContext : IdentityDbContext<User>  // Use User here in
     }
 
     // Removed DbSet<User> as it's automatically handled by IdentityDbContext
-    public DbSet<Role> Roles { get; set; }
+    public new DbSet<Role> Roles { get; set; }
     public DbSet<Mjeku> Mjeket { get; set; }
     public DbSet<Pacienti> Pacientet { get; set; }
     public DbSet<Termini> Terminet { get; set; }
