@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿
+using Healthcare.Api.DTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ReactApp1.Server;
-using ReactApp1.Server.Data.Models;
+// using Healthcare.Api.Server;
+using Healthcare.Api.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 

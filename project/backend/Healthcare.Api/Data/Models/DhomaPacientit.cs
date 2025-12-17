@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ReactApp1.Server.Data.Models
+namespace Healthcare.Api.Data.Models
 {
     public class DhomaPacientit
     {

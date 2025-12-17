@@ -1,5 +1,6 @@
-﻿using Microsoft.Build.Framework;
-namespace ReactApp1.Server.Data.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Healthcare.Api.Data.Models
 
 {
     public class AddRoleModel

@@ -1,16 +1,16 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ReactApp1.Server.Data;
-using ReactApp1.Server.Data.Models;
+using Healthcare.Api.Data;
+using Healthcare.Api.Data.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ReactApp1.Server.DTOs;
-using ReactApp1.Server.Migrations;
+using Healthcare.Api.DTOs;
+// using Healthcare.Api.Migrations;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
-namespace ReactApp1.Server.Controllers
+namespace Healthcare.Api.Controllers
 {
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/[controller]")]

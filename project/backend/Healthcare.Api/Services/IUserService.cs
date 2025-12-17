@@ -1,6 +1,7 @@
-﻿using JWTAuthentication.WebApi.Models;
-using ReactApp1.Server;
-using ReactApp1.Server.Data.Models;
+﻿using Healthcare.Api.DTOs;
+using JWTAuthentication.WebApi.Models;
+using Healthcare.Api.Data.Models;
+using Healthcare.Api.Data.Models;
 
 public interface IUserService
 {

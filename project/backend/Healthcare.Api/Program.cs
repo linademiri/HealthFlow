@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using ReactApp1.Server.Data.Models;
-using ReactApp1.Server.Services;
+using Healthcare.Api.Data.Models;
+using Healthcare.Api.Services;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);

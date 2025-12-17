@@ -1,5 +1,5 @@
 ﻿// DTO for Doctor
-namespace ReactApp1.Server.DTOs
+namespace Healthcare.Api.DTOs
 {
     public class MjekuDTO
     {

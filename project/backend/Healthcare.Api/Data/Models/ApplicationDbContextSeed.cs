@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace ReactApp1.Server.Data.Models
+namespace Healthcare.Api.Data.Models
 {
     public class ApplicationDbContextSeed
     {

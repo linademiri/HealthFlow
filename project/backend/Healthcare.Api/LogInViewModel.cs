@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 
-namespace ReactApp1.Server
+namespace Healthcare.Api.DTOs
 {
     public class LogInViewModel
     {

@@ -1,4 +1,6 @@
-﻿namespace ReactApp1.Server.Data.Models
+﻿using Healthcare.Api.DTOs;
+
+namespace Healthcare.Api.Data.Models
 {
     public class Authorization
     {

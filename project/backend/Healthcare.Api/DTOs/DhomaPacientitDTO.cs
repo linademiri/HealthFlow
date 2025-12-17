@@ -1,7 +1,7 @@
-﻿using ReactApp1.Server.Data.Models;
+﻿using Healthcare.Api.Data.Models;
 
 // DTO for Patient Room assignments
-namespace ReactApp1.Server.DTOs
+namespace Healthcare.Api.DTOs
 {
     public class DhomaPacientitDTO
     {

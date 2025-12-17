@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using ReactApp1.Server.Data.Models;
+using Healthcare.Api.Data.Models;
 
 public class ApplicationDbContext : IdentityDbContext<User>  // Use User here instead of IdentityUser
 {

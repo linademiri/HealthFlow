@@ -1,16 +1,17 @@
-﻿using Azure;
+﻿using Healthcare.Api.DTOs;
+using Azure;
 using JWTAuthentication.WebApi.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using ReactApp1.Server.Data.Models;
+using Healthcare.Api.Data.Models;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace ReactApp1.Server.Services
+namespace Healthcare.Api.Services
 {
     public class UserService : IUserService
     {

@@ -1,7 +1,7 @@
 ﻿
 using System.Numerics;
 
-namespace ReactApp1.Server.Data.Models
+namespace Healthcare.Api.Data.Models
 {
     public class Termini
     {

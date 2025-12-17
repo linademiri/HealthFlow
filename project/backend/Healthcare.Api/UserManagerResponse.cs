@@ -1,4 +1,4 @@
-﻿namespace ReactApp1.Server
+﻿namespace Healthcare.Api.DTOs
 {
     public class UserManagerResponse
     {

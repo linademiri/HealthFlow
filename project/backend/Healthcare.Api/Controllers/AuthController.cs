@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using ReactApp1.Server;
-using ReactApp1.Server.Data.Models;
+﻿using Healthcare.Api.DTOs;
+using Microsoft.AspNetCore.Mvc;
+using Healthcare.Api.Services;
+using Healthcare.Api.Data.Models;
 
 [Route("api/[controller]")]
 [ApiController]

@@ -1,5 +1,5 @@
 ﻿// DTO for Patient Details with related data
-namespace ReactApp1.Server.DTOs
+namespace Healthcare.Api.DTOs
 {
     public class PatientDetailsDTO
     {

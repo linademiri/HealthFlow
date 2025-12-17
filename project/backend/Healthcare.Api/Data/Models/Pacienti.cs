@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace ReactApp1.Server.Data.Models
+namespace Healthcare.Api.Data.Models
 {
     public class Pacienti
     {

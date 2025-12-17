@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace ReactApp1.Server
+namespace Healthcare.Api.DTOs
 {
     public class RegisterViewModel {
 

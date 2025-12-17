@@ -2,15 +2,15 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ReactApp1.Server.Data;
-using ReactApp1.Server.Data.Models;
-using ReactApp1.Server.DTOs; // Ensure this namespace is added
+using Healthcare.Api.Data;
+using Healthcare.Api.Data.Models;
+using Healthcare.Api.DTOs; // Ensure this namespace is added
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
 
-namespace ReactApp1.Server.Controllers
+namespace Healthcare.Api.Controllers
 {
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/[controller]")]
