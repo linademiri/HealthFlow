@@ -1,5 +1,6 @@
 ﻿using ReactApp1.Server.Data.Models;
 
+// DTO for Appointment
 namespace ReactApp1.Server.DTOs
 {
     public class TerminiDTO
