@@ -29,6 +29,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 // Lazy loading components
 const RegisterForm = React.lazy(() => import("./RegisterForm"));
+
 const LoginForm = React.lazy(() => import("./LoginForm"));
 const AboutUs = React.lazy(() => import("./AboutUs"));
 const Contact = React.lazy(() => import("./Contact"));
