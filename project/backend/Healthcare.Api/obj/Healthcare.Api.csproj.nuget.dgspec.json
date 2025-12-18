@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Acer\\OneDrive\\Documents\\E-commerce\\HealthFlow\\project\\backend\\Healthcare.Api\\Healthcare.Api.csproj": {}
+    "C:\\Users\\klina\\Desktop\\GP\\HealthFlow\\project\\backend\\Healthcare.Api\\Healthcare.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Acer\\OneDrive\\Documents\\E-commerce\\HealthFlow\\project\\backend\\Healthcare.Api\\Healthcare.Api.csproj": {
+    "C:\\Users\\klina\\Desktop\\GP\\HealthFlow\\project\\backend\\Healthcare.Api\\Healthcare.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Acer\\OneDrive\\Documents\\E-commerce\\HealthFlow\\project\\backend\\Healthcare.Api\\Healthcare.Api.csproj",
+        "projectUniqueName": "C:\\Users\\klina\\Desktop\\GP\\HealthFlow\\project\\backend\\Healthcare.Api\\Healthcare.Api.csproj",
         "projectName": "Healthcare.Api",
-        "projectPath": "C:\\Users\\Acer\\OneDrive\\Documents\\E-commerce\\HealthFlow\\project\\backend\\Healthcare.Api\\Healthcare.Api.csproj",
-        "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Acer\\OneDrive\\Documents\\E-commerce\\HealthFlow\\project\\backend\\Healthcare.Api\\obj\\",
+        "projectPath": "C:\\Users\\klina\\Desktop\\GP\\HealthFlow\\project\\backend\\Healthcare.Api\\Healthcare.Api.csproj",
+        "packagesPath": "C:\\Users\\klina\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\klina\\Desktop\\GP\\HealthFlow\\project\\backend\\Healthcare.Api\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\klina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
