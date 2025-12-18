@@ -38,7 +38,8 @@ namespace Healthcare.Api.Controllers
                     .Include(h => h.Pacienti)
                     .ToListAsync();
 
-                return Ok(historikuList.Select(h => new HistorikuDTO {
+                return Ok(historikuList.Select(h => new HistorikuDTO
+                {
                     Id = h.Id,
                     MjekuId = h.MjekuId,
                     PacientId = h.PacientId,

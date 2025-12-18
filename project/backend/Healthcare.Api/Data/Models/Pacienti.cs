@@ -18,7 +18,9 @@ namespace Healthcare.Api.Data.Models
 
         [JsonIgnore]
         public List<Fatura> Faturat { get; set; }
-        public List<DhomaPacientit> DhomaPacienteve { get; set; }
+        public List<DhomaPacientit> DhomaPacienteve { get; set; } = new List<DhomaPacientit>();
+
+
 
     }
 }

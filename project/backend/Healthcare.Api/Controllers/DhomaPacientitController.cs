@@ -72,10 +72,10 @@ namespace Healthcare.Api.Controllers
         [Authorize(Roles = "Doctor,Administrator")]
         public async Task<IActionResult> PutDhomaPacientit(string id, DhomaPacientitDTO dhomaPacientitDTO)
         {
-/*            if (id != dhomaPacientitDTO.DhomaId)
-            {
-                return BadRequest("ID mismatch.");
-            }*/
+            /*            if (id != dhomaPacientitDTO.DhomaId)
+                        {
+                            return BadRequest("ID mismatch.");
+                        }*/
 
             var dhomaPacientit = await _context.DhomaPacienteve.FindAsync(id);
             if (dhomaPacientit == null)
