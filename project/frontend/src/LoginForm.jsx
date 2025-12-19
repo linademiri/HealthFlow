@@ -12,11 +12,9 @@ const LoginForm = () => {
 
     const handleLogin = async (event) => {
         event.preventDefault();
-
         const userData = { email, password };
 
         try {
-            // Update the URL to the correct endpoint
             const response = await fetch('https://localhost:7107/api/User/token', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -33,17 +31,15 @@ const LoginForm = () => {
             const data = await response.json();
             console.log('Login successful:', data);
 
-            // Save tokens, roles, and email in localStorage
             localStorage.setItem('token', data.token);
             localStorage.setItem('refreshToken', data.refreshToken);
             localStorage.setItem('userRoles', JSON.stringify(data.roles || []));
-            localStorage.setItem('email', email); // Store the email in localStorage
+            localStorage.setItem('email', email);
 
             setSuccessMessage(data.message || 'Login successful!');
-
             const roles = data.roles || [];
-            const redirectPath = roles.includes('Doctor') ? '/' : '/'; // Adjust the redirect based on roles if needed
-            navigate(redirectPath); // Use navigate to redirect
+            const redirectPath = roles.includes('Doctor') ? '/' : '/';
+            navigate(redirectPath);
         } catch (error) {
             console.error('Login error:', error);
             setErrorMessage('An error occurred. Please try again later.');
@@ -51,107 +47,106 @@ const LoginForm = () => {
     };
 
     return (
-        <div
+            <div
             style={{
-                display: 'flex',
-                flexDirection: 'column',
-                minHeight: '100vh',
-                backgroundImage: `url(${contactImage})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundColor: 'rgba(255, 255, 255, 0.5)',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            minHeight: '100vh',
+            width: '100vw',
+            margin: 0,
+            padding: 0,
+            overflowX: 'hidden', // prevents horizontal scrolling
+            backgroundImage: `url(${contactImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
             }}
         >
-            <div
-                style={{
-                    flex: 1,
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    padding: '20px',
-                }}
-            >
-                <MDBCard
-                    style={{
-                        minWidth: '26rem',  // Increase the width of the card
-                        borderRadius: '15px',
-                        boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.2)',
-                    }}
-                >
-                    <MDBCardBody className="px-5 py-4" >
-                        <h2 className="text-uppercase text-center mb-3">Log In</h2>
-                        <form onSubmit={handleLogin}>
-                            <MDBInput
-                                placeholder="Your Email"
-                                type="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                style={{
-                                    marginBottom: '1.5rem',
-                                    padding: '15px',
-                                    fontSize: '1.1rem',
-                                    borderRadius: '8px',
-                                }}
-                                required
-                            />
-                            <MDBInput
-                                placeholder="Password"
-                                type="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                style={{
-                                    marginBottom: '1.5rem',
-                                    padding: '15px',
-                                    fontSize: '1.1rem',
-                                    borderRadius: '8px',
-                                }}
-                                required
-                            />
+            <MDBCard
+            style={{
+            width: '100%',
+            maxWidth: '500px',  // limit max width
+            borderRadius: '15px',
+            boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.2)',
+            margin: '0 10px',   // small horizontal margin to prevent edge overflow
+            }}
+        >
 
-                            {errorMessage && (
-                                <div className="text-danger mb-2" style={{ fontSize: '0.9rem' }}>
-                                    {errorMessage}
-                                </div>
-                            )}
-                            {successMessage && (
-                                <div className="text-success mb-2" style={{ fontSize: '0.9rem' }}>
-                                    {successMessage}
-                                </div>
-                            )}
 
-                            <MDBBtn
-                                size="lg"
-                                type="submit"
-                                style={{
-                                    width: '100%',
-                                    height: '60px',
-                                    fontSize: '1.2rem',
-                                    backgroundColor: '#007bff',
-                                    borderRadius: '8px',
-                                }}
-                            >
-                                Login
-                            </MDBBtn>
-                        </form>
+                <MDBCardBody className="px-5 py-4">
+                    <h2 className="text-uppercase text-center mb-3">Log In</h2>
+                    <form onSubmit={handleLogin}>
+                        <MDBInput
+                            placeholder="Your Email"
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            style={{
+                                marginBottom: '1.5rem',
+                                padding: '15px',
+                                fontSize: '1.1rem',
+                                borderRadius: '8px',
+                            }}
+                            required
+                        />
+                        <MDBInput
+                            placeholder="Password"
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            style={{
+                                marginBottom: '1.5rem',
+                                padding: '15px',
+                                fontSize: '1.1rem',
+                                borderRadius: '8px',
+                            }}
+                            required
+                        />
 
-                        <NavLink
-                            to="/ForgotPassword"
-                            className="text-center d-block mt-3"
-                            style={{ color: 'green', fontSize: '1rem' }}
+                        {errorMessage && (
+                            <div className="text-danger mb-2" style={{ fontSize: '0.9rem' }}>
+                                {errorMessage}
+                            </div>
+                        )}
+                        {successMessage && (
+                            <div className="text-success mb-2" style={{ fontSize: '0.9rem' }}>
+                                {successMessage}
+                            </div>
+                        )}
+
+                        <MDBBtn
+                            size="lg"
+                            type="submit"
+                            style={{
+                                width: '100%',
+                                height: '60px',
+                                fontSize: '1.2rem',
+                                backgroundColor: '#007bff',
+                                borderRadius: '8px',
+                            }}
                         >
-                            Forgot Password?
-                        </NavLink>
+                            Login
+                        </MDBBtn>
+                    </form>
 
-                        <NavLink
-                            to="/RegisterForm"
-                            className="text-center d-block mt-2"
-                            style={{ color: 'blue', fontSize: '1rem' }}
-                        >
-                            Don't have an account? Register here
-                        </NavLink>
-                    </MDBCardBody>
-                </MDBCard>
-            </div>
+                    <NavLink
+                        to="/ForgotPassword"
+                        className="text-center d-block mt-3"
+                        style={{ color: 'green', fontSize: '1rem' }}
+                    >
+                        Forgot Password?
+                    </NavLink>
+
+                    <NavLink
+                        to="/RegisterForm"
+                        className="text-center d-block mt-2"
+                        style={{ color: 'blue', fontSize: '1rem' }}
+                    >
+                        Don't have an account? Register here
+                    </NavLink>
+                </MDBCardBody>
+            </MDBCard>
         </div>
     );
 };

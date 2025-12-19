@@ -75,6 +75,12 @@ footer .contact-info .media img {
   width: 50px;
 }
 
+footer .contact-info {
+    background-color: transparent; 
+    color: #aaa;
+}
+
+
 footer .footer-bottom {
   font-size: 0.9rem;
   

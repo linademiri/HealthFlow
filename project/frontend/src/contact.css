@@ -1,137 +1,207 @@
-.contact-us {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+/* ================================
+   RESET & GLOBAL
+================================ */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
     color: #333;
+    background-color: #ffffff;
+}
+
+/* ================================
+   PAGE WRAPPER
+================================ */
+.contact-us {
+    width: 100%;
+}
+
+/* ================================
+   FULL WIDTH SECTIONS
+================================ */
+.full-width-section {
+    width: 100%;
+}
+
+/* ================================
+   CENTERED CONTENT
+================================ */
+.section-inner {
+    width: 100%;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* ================================
+   HEADER
+================================ */
+.contact-header {
+    width: 100%;
+    background-color: #5ab650;
+    color: #ffffff;
+    text-align: center;
+}
+
+.contact-header h1 {
+    margin: 0 0 15px 0;
+    font-size: 2.5rem;
+}
+
+.contact-header p {
+    margin: 0;
+    font-size: 1.1rem;
+    opacity: 0.95;
+}
+
+/* ================================
+   CONTACT INFO SECTION
+================================ */
+.contact-info {
+    background-color: #ffffff;
+}
+
+.info-row {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.info-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.info-column h2 {
+    margin-bottom: 15px;
+}
+
+.info-column p {
+    margin-bottom: 20px;
     line-height: 1.6;
 }
 
-.contact-header {
-    text-align: center;
-    background-color: #5ab650;
-    color: white;
-    padding: 5px 5px;
+.info-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-    .contact-header h1 {
-        font-size: 2.5rem;
-    }
-
-    .contact-header p {
-        font-size: 1.2rem;
-    }
-
-.contact-info {
-    padding: 5px 5px;
-    background-color: #fff;
+.info-column li {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
 }
 
-    .contact-info h2 {
-        font-size: 2rem;
-        margin-bottom: 20px;
-    }
-
-    .contact-info ul {
-        list-style: none;
-        padding: 0;
-        font-size: 1.1rem;
-    }
-
-        .contact-info ul li {
-            margin-bottom: 10px;
-        }
+/* ================================
+   MAP
+================================ */
+.map-placeholder {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
 
 .map-placeholder img {
+    display: block;
     width: 100%;
-    height: auto;
-    border-radius: 10px;
+    height: 300px;
+    object-fit: cover;
 }
 
+/* ================================
+   CONTACT FORM
+================================ */
 .contact-form {
-    padding: 40px 20px;
     background-color: #e9ecef;
 }
 
-    .contact-form h2 {
-        text-align: center;
-        font-size: 2rem;
-        margin-bottom: 20px;
-    }
-
-    .contact-form form {
-        max-width: 600px;
-        margin: 0 auto;
-    }
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-    .form-group label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
-
-    .form-group input,
-    .form-group textarea {
-        width: 100%;
-        padding: 10px;
-        font-size: 1rem;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
-
-    .form-group textarea {
-        resize: none;
-    }
-
-.submit-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    background-color: #5ab650;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-    .submit-button:hover {
-        background-color: #4a9e40;
-    }
-
-.contact-footer {
+.contact-form h2 {
     text-align: center;
-    background-color: #333;
-    color: white;
-    padding: 20px 10px;
-    margin-top: 40px;
-}
-.admin-messages {
-    padding: 40px 20px;
-    background-color: #f9f9f9;
+    margin-bottom: 40px;
+    font-size: 2rem;
 }
 
-    .admin-messages h2 {
+form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+
+/* ================================
+   FORM FIELDS
+================================ */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #5ab650;
+}
+
+/* ================================
+   SUBMIT BUTTON
+================================ */
+.submit-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #5ab650;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #4a9e40;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+    .section-inner {
+        padding: 40px 16px;
+    }
+
+    .contact-header h1 {
         font-size: 2rem;
-        margin-bottom: 20px;
     }
 
-    .admin-messages ul {
-        list-style: none;
-        padding: 0;
+    .info-row {
+        flex-direction: column;
+        gap: 30px;
     }
 
-    .admin-messages li {
-        background-color: #fff;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        padding: 15px;
-        margin-bottom: 15px;
+    .contact-form h2 {
+        font-size: 1.7rem;
     }
-
-        .admin-messages li p {
-            margin: 5px 0;
-        }
+}
