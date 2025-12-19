@@ -1,3 +1,6 @@
+/* =========================
+   Layout
+========================= */
 .room-management {
     flex: 1;
     padding: 2rem;
@@ -19,18 +22,20 @@
     font-weight: 600;
 }
 
-/* Form Section Styles */
+/* =========================
+   Form Section
+========================= */
 .form-section {
-    background: white;
+    background: #fff;
     border-radius: 12px;
     padding: 1.5rem;
     margin-bottom: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border: 1px solid #e9ecef;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
 }
 
 .form-section h3 {
-    margin: 0 0 1rem 0;
+    margin: 0 0 1rem;
     color: #2c3e50;
     font-weight: 600;
 }
@@ -54,17 +59,20 @@
     border-top: 1px solid #e9ecef;
 }
 
-/* Table Styles */
+/* =========================
+   Table
+========================= */
 .room-table-container {
-    background: white;
+    background: #fff;
     border-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border: 1px solid #e9ecef;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+    overflow-x: auto; /* FIX: prevents mobile overflow */
 }
 
 .room-table-container h3 {
-    margin: 0 0 1rem 0;
+    margin: 0 0 1rem;
     color: #2c3e50;
     font-weight: 600;
 }
@@ -72,15 +80,11 @@
 .room-table {
     width: 100%;
     border-collapse: collapse;
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .room-table th {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
     padding: 1rem;
     text-align: left;
     font-weight: 600;
@@ -101,13 +105,14 @@
     border-bottom: none;
 }
 
-/* Edit Form Styles */
+/* =========================
+   Edit Form
+========================= */
 .edit-form {
     width: 100%;
 }
 
 .edit-form .form-row {
-    display: grid;
     grid-template-columns: 2fr 2fr 1fr 1fr 2fr;
     gap: 0.5rem;
     align-items: center;
@@ -124,28 +129,33 @@
     gap: 0.5rem;
 }
 
-/* Status Styles */
+/* =========================
+   Status Badges
+========================= */
 .status {
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 500;
+    font-size: 0.75rem;
+    font-weight: 600;
     text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .status.available {
     background: rgba(40, 167, 69, 0.9);
-    color: white;
+    color: #fff;
 }
 
 .status.occupied {
     background: rgba(220, 53, 69, 0.9);
-    color: white;
+    color: #fff;
 }
 
-/* Form Styles */
+/* =========================
+   Inputs
+========================= */
 .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
 }
 
 .form-group label {
@@ -163,107 +173,67 @@
     border: 2px solid #e9ecef;
     border-radius: 8px;
     font-size: 1rem;
-    transition: all 0.2s ease;
-    background: white;
+    background: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-group input:focus,
 .form-group select:focus {
     outline: none;
     border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-    transform: translateY(-1px);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.12);
 }
 
+/* Checkbox fix (no duplicate rules) */
 .form-group input[type="checkbox"] {
     width: auto;
-    margin-right: 0.5rem;
     transform: scale(1.2);
-}
-
-.form-group label input[type="checkbox"] {
-    display: inline;
-    width: auto;
     margin-right: 0.5rem;
 }
 
-/* Button Styles */
+/* =========================
+   Buttons
+========================= */
 .btn {
     padding: 0.75rem 1.5rem;
-    border: none;
     border-radius: 8px;
     font-size: 0.95rem;
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.2s ease;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
+    border: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     min-width: 100px;
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    box-shadow: 0 4px 6px rgba(102, 126, 234, 0.2);
-}
-
-.btn-primary:hover {
-    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.3);
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
 }
 
 .btn-secondary {
     background: #6c757d;
-    color: white;
-    box-shadow: 0 4px 6px rgba(108, 117, 125, 0.2);
-}
-
-.btn-secondary:hover {
-    background: #5a6268;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(108, 117, 125, 0.3);
+    color: #fff;
 }
 
 .btn-danger {
-    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
-    color: white;
-    box-shadow: 0 4px 6px rgba(220, 53, 69, 0.2);
-}
-
-.btn-danger:hover {
-    background: linear-gradient(135deg, #c82333 0%, #a71e2a 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(220, 53, 69, 0.3);
+    background: linear-gradient(135deg, #dc3545, #c82333);
+    color: #fff;
 }
 
 .btn-outline-primary {
     background: transparent;
-    color: #667eea;
     border: 2px solid #667eea;
-    box-shadow: none;
-}
-
-.btn-outline-primary:hover {
-    background: #667eea;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(102, 126, 234, 0.2);
+    color: #667eea;
 }
 
 .btn-outline-danger {
     background: transparent;
-    color: #dc3545;
     border: 2px solid #dc3545;
-    box-shadow: none;
+    color: #dc3545;
 }
 
-.btn-outline-danger:hover {
-    background: #dc3545;
-    color: white;
+.btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(220, 53, 69, 0.2);
 }
 
 .btn-sm {
@@ -272,78 +242,57 @@
     min-width: 80px;
 }
 
-/* Alert Styles */
+/* =========================
+   Alerts & States
+========================= */
 .alert {
     padding: 1rem;
-    margin-bottom: 1rem;
     border-radius: 8px;
-    border: 1px solid transparent;
     font-weight: 500;
 }
 
 .alert-danger {
     background: #f8d7da;
     color: #721c24;
-    border-color: #f5c6cb;
-    box-shadow: 0 2px 4px rgba(220, 53, 69, 0.1);
+    border: 1px solid #f5c6cb;
 }
 
-.no-rooms {
-    text-align: center;
-    padding: 2rem;
-    color: #6c757d;
-    font-style: italic;
-}
-
+.no-rooms,
 .loading {
     text-align: center;
     padding: 2rem;
     color: #6c757d;
-    font-size: 1.1rem;
 }
 
-/* Responsive Design */
+/* =========================
+   Responsive
+========================= */
 @media (max-width: 768px) {
     .room-management {
         padding: 1rem;
     }
-    
+
     .room-header {
         flex-direction: column;
         gap: 1rem;
-        align-items: stretch;
     }
-    
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-    
+
+    .form-row,
     .edit-form .form-row {
         grid-template-columns: 1fr;
-        gap: 1rem;
     }
-    
-    .room-table {
-        font-size: 0.9rem;
-    }
-    
-    .room-table th,
-    .room-table td {
-        padding: 0.75rem 0.5rem;
-    }
-    
+
     .form-actions {
         flex-direction: column;
     }
-    
+
     .form-actions .btn {
         width: 100%;
-        margin-bottom: 0.5rem;
     }
-    
-    .btn-sm {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.8rem;
-        min-width: 60px;
+
+    .room-table th,
+    .room-table td {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.9rem;
     }
-} 
+}

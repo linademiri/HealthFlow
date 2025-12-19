@@ -4,21 +4,15 @@ import {
     FaUserAlt,
     FaCalendarAlt,
     FaFileInvoiceDollar,
-    FaMedkit,
-    FaCog,
-    FaFileAlt,
     FaMoneyCheckAlt,
     FaUsers,
-    FaBullhorn,
     FaBed,
-    FaHospital,
     FaClinicMedical,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import "./Sidebar.css"; // Import the CSS file
+import "./Sidebar.css";
 
 const Sidebar = ({ userType }) => {
-    // Define sidebar items based on userType
     const sidebarItems = userType === "admin"
         ? [
             { path: "/AdminDashboard", icon: <FaHome />, label: "Dashboard" },
@@ -26,7 +20,6 @@ const Sidebar = ({ userType }) => {
             { path: "/PaymentAdmin", icon: <FaMoneyCheckAlt />, label: "Payments" },
             { path: "/Doctors", icon: <FaClinicMedical />, label: "Doctors" },
             { path: "/RoomManagement", icon: <FaClinicMedical />, label: "Room Management" },
-
         ]
         : [
             { path: "/Dashboard", icon: <FaHome />, label: "Dashboard" },
@@ -41,12 +34,15 @@ const Sidebar = ({ userType }) => {
 
     return (
         <div className="sidebar-container">
-            <h5 className="sidebar-title">{userType === "admin" ? "Admin Dashboard" : "Doctor Dashboard"}</h5>
+            <h5 className="sidebar-title">
+                {userType === "admin" ? "Admin Dashboard" : "Doctor Dashboard"}
+            </h5>
             <ul className="sidebar-list">
                 {sidebarItems.map((item, index) => (
                     <li key={index}>
                         <Link to={item.path} className="sidebar-link">
-                            {item.icon} {item.label}
+                            <span className="sidebar-icon">{item.icon}</span>
+                            {item.label}
                         </Link>
                     </li>
                 ))}
@@ -56,3 +52,4 @@ const Sidebar = ({ userType }) => {
 };
 
 export default Sidebar;
+

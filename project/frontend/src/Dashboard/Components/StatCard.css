@@ -1,10 +1,9 @@
 /* Horizontal layout for the dashboard */
 .dashboard-horizontal {
     display: flex;
-    gap: 20px; /* Space between cards */
+    gap: 60px; /* Space between cards */
     justify-content: center;
     align-items: stretch;
-    padding: 20px;
 }
 
 /* Card styles */

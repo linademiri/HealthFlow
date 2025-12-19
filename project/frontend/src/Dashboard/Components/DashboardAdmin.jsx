@@ -1,27 +1,40 @@
-import React from 'react';
-import Sidebar from './Sidebar';
-import Widget from './Widget';
-import MainPageStats from './MainPageStats';
-import EarningReports from './EarningReports';
+import React from "react";
+import { Box } from "@mui/material";
+import Sidebar from "./Sidebar";
+import MainPageStats from "./MainPageStats";
+import EarningReports from "./EarningReports";
 
 const DashboardAdmin = () => {
-    return (
-        <div className="d-flex" style={{ backgroundColor: '#f5f6f7' }} >
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        minHeight: "100vh",
+        backgroundColor: "#f5f6f7",
+      }}
+    >
+      {/* Sidebar */}
+      <Sidebar userType="admin" />
 
+      {/* Main Content */}
+      <Box
+        sx={{
+          flex: 1,
+          padding: 4,
+        }}
+      >
+        {/* Stats Section */}
+        <Box sx={{ mb: 4 }}>
+          <MainPageStats />
+        </Box>
 
-            <Sidebar userType="admin" />
-
-         
-            <div style={{ paddingTop: '45px' }}>
-                <MainPageStats></MainPageStats>
-            </div>
-
-            <div style={{ display: 'block', marginTop: '300px', marginLeft: '-990px' }}>
-                <EarningReports></EarningReports>
-                <br></br>
-            </div>
-        </div>
-    );
+        {/* Reports Section */}
+        <Box>
+          <EarningReports />
+        </Box>
+      </Box>
+    </Box>
+  );
 };
 
 export default DashboardAdmin;

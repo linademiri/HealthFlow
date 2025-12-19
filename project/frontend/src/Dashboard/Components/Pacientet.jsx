@@ -9,11 +9,11 @@ import { Form } from "react-bootstrap";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
-import Sidebar from "./Sidebar.jsx";
 import { IconButton } from "@mui/material";
 import { Edit, Delete } from "@mui/icons-material";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Sidebar from "./Sidebar";
 
 const Pacientet = () => {
     const [show, setShow] = useState(false);

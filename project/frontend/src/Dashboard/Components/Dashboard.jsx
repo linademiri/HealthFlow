@@ -1,29 +1,33 @@
 import React, { memo } from 'react';
 import Sidebar from './Sidebar';
-import Widget from './Widget';
 import MainPageStats from './MainPageStats';
 import EarningReports from './EarningReports';
 
-// Inline layout constants extracted for readability and easier future tweaks
-const DASHBOARD_BACKGROUND_STYLE = { backgroundColor: '#f5f6f7' };
-const MAIN_CONTENT_STYLE = { paddingTop: '45px' };
-const EARNING_REPORTS_CONTAINER_STYLE = {
-    display: 'block',
-    marginTop: '300px',
-    marginLeft: '-990px',
+const DASHBOARD_STYLE = {
+    display: 'flex',
+    minHeight: '100vh',
+    backgroundColor: '#f5f6f7',
+};
+
+const MAIN_CONTENT_STYLE = {
+    flexGrow: 1,
+    padding: '30px 30px 30px 30px', // top padding + general padding
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '30px', // spacing between MainPageStats and EarningReports
 };
 
 const Dashboard = () => (
-    <div className="d-flex" style={DASHBOARD_BACKGROUND_STYLE}>
+    <div style={DASHBOARD_STYLE}>
+        {/* Sidebar */}
         <Sidebar userType="doctor" />
 
+        {/* Main content */}
         <div style={MAIN_CONTENT_STYLE}>
             <MainPageStats />
-        </div>
 
-        <div style={EARNING_REPORTS_CONTAINER_STYLE}>
+            {/* Earning Reports */}
             <EarningReports />
-            <br />
         </div>
     </div>
 );

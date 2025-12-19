@@ -1,10 +1,8 @@
-/* Sidebar Container */
 .sidebar-container {
     background-color: #f8f9fa;
-    height: 100vh;
     width: 240px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for the sidebar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
 }
@@ -30,21 +28,26 @@
     align-items: center;
     text-decoration: none;
     color: #6db7ab;
-    font-size: 1.05rem; /* Increase font size */
-    font-weight: 600; /* Increase font weight for better visibility */
-    padding: 15px 0; /* Add more padding for larger clickable area */
-    transition: color 0.2s ease, transform 0.2s ease;
+    font-size: 1.05rem;
+    font-weight: 600;
+    padding: 12px 10px; /* Adjust padding for better clickable area */
+    transition: color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+    border-radius: 5px; /* Optional: smooth edges on hover */
 }
 
-    .sidebar-link:hover {
-        color: #27ae60; /* Light green on hover */
-        background-color: #eaf1f1; /* Light greenish background on hover */
-        transform: translateX(5px); /* Subtle hover animation */
-    }
+.sidebar-link:hover {
+    color: #27ae60;
+    background-color: #eaf1f1;
+    transform: translateX(5px);
+}
 
 /* Sidebar Icons */
 .sidebar-icon {
-    margin-right: 15px; /* Increase space between icon and text */
-    font-size: 24px; /* Increase icon size */
+    margin-right: 12px;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #6db7ab;
 }
+
