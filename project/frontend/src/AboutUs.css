@@ -1,83 +1,89 @@
 .about-us {
-    font-family: Arial, sans-serif;
-    background-color: mintcream;
-    color: #568203;
+  font-family: Arial, sans-serif;
+  background-color: #f0fff0;
+  color: #333;
 }
 
+
+.full-width-section {
+  width: 100%;
+  padding: 60px 40px;
+  box-sizing: border-box; 
+}
+
+/* Header */
 .about-header {
-    background-color: #5ab650;
-    color: white;
-    text-align: center;
-    padding: 2px;
+  background-color: #5ab650;
+  color: white;
+  text-align: center;
 }
 
 .about-header h1 {
-    margin: 0;
-    font-size: 3em;
+  font-size: 3em;
+  margin-bottom: 15px;
 }
 
 .about-header p {
-    font-size: 1.2em;
-    margin-top: 10px;
+  font-size: 1.2em;
 }
 
-.mission-vision {
-    padding: 40px 0;
-}
-
+/* Mission & Vision */
 .mission-vision h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+  font-size: 2em;
+  margin-bottom: 20px;
 }
 
 .mission-vision p {
-    font-size: 1.1em;
-    line-height: 1.5;
+  font-size: 1.1em;
+  line-height: 1.6;
 }
 
+/* Values */
 .values {
-    background-color: mintcream;
-    padding: 20px 0;
+  background-color: #e6f5e6;
 }
 
 .values h2 {
-    font-size: 2.5em;
-    text-align: center;
-    margin-bottom: 40px;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.values .col-md-4 {
-    margin-bottom: 20px;
+.value-item {
+  margin-bottom: 30px;
 }
 
+.value-icon {
+  color: #5ab650;
+  margin-bottom: 15px;
+}
+
+/* Team */
 .our-team {
-    padding: 40px 0;
-    background-color: mintcream;
+  background-color: #f0fff0;
+  text-align: center;
 }
 
 .our-team .team-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
-.facilities {
-    padding: 40px 0;
-}
-
+/* Facilities */
 .facilities img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
-.footer {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
+/* Responsive */
+@media (max-width: 768px) {
+  .mission-vision .row,
+  .facilities .row {
+    flex-direction: column;
+  }
+
+  .full-width-section {
+    padding: 40px 20px;
+  }
 }
 
-.footer p {
-    margin: 0;
-    font-size: 1.1em;
-}

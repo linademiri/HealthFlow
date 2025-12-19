@@ -1,6 +1,6 @@
 import React from 'react';
 import './OurDoctors.css';
-import { Card, Button, Container, Row, Col, Badge } from 'react-bootstrap';
+import { Card, Row, Col, Badge } from 'react-bootstrap';
 
 function OurDoctors() {
     const doctors = [
@@ -25,7 +25,7 @@ function OurDoctors() {
         {
             name: "Dr. Michael Brown",
             specialty: "Orthopedic Surgeon",
-            bio: "Dr. Michael is a specialist in musculoskeletal health, offering surgical.",
+            bio: "Dr. Michael is a specialist in musculoskeletal health, offering surgical care.",
             image: "https://www.aucmed.edu/sites/g/files/krcnkv361/files/styles/atge_3_2_crop_md/public/2021-11/large-Smile-Guy-web.jpg?h=6b55786a&itok=Wy7cQpYS",
         },
         {
@@ -44,41 +44,38 @@ function OurDoctors() {
 
     return (
         <>
-            {/* Green top section */}
             <section className="green-top-section">
-                <h1 style={{ fontSize:"3rem" }}>Meet Our Doctors</h1>
+                <h1>Meet Our Doctors</h1>
                 <p>Our dedicated team of professionals is here to ensure you receive the best care possible.</p>
             </section>
 
-            {/* Doctors list */}
-            <section id="our-doctors" className="our-doctors-section py-5">
-                <Container>
-                    <Row>
+            <section className="our-doctors-section">
+                <div className="full-width-container">
+                    <Row className="g-4 justify-content-center">
                         {doctors.map((doctor, index) => (
-                            <Col key={index} md={6} lg={4} className="mb-4">
-                                <Card className="doctor-card h-100 text-center shadow">
-                                    <div className="card-image-container">
-                                        <Card.Img
-                                            variant="top"
-                                            src={doctor.image}
-                                            alt={doctor.name}
-                                            className="rounded-circle shadow-sm"
-                                        />
-                                    </div>
+                            <Col key={index} xs={12} sm={6} md={4} lg={3}>
+                                <Card className="doctor-card h-100 text-center shadow-sm">
+                                    <Card.Img
+                                        variant="top"
+                                        src={doctor.image}
+                                        alt={doctor.name}
+                                        className="doctor-img"
+                                    />
                                     <Card.Body>
                                         <Card.Title>{doctor.name}</Card.Title>
                                         <Badge bg="info" className="mb-2">{doctor.specialty}</Badge>
-                                        <Card.Text className="text-muted">{doctor.bio}</Card.Text>
+                                        <Card.Text>{doctor.bio}</Card.Text>
                                     </Card.Body>
                                     <Card.Footer className="text-muted">Available for Consultations</Card.Footer>
                                 </Card>
                             </Col>
                         ))}
                     </Row>
-                </Container>
+                </div>
             </section>
         </>
     );
 }
 
 export default OurDoctors;
+
