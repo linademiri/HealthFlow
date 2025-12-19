@@ -21,3 +21,4 @@ namespace Healthcare.Api.Data.Models
         public bool? Paguar { get; set; }
     }
 }
+

@@ -123,99 +123,163 @@ const LoginForm = () => {
 
 export default LoginForm;*/
 
+// import React, { useState } from 'react';
+// import { MDBBtn, MDBCard, MDBCardBody, MDBInput } from 'mdb-react-ui-kit';
+// import { useNavigate } from 'react-router-dom';
+
+// const FakeLoginForm = () => {
+//     const [email, setEmail] = useState('');
+//     const [password, setPassword] = useState('');
+//     const [selectedRole, setSelectedRole] = useState('Doctor'); // Default role for testing
+//     const [errorMessage, setErrorMessage] = useState('');
+//     const navigate = useNavigate();
+
+//     const handleLogin = (event) => {
+//         event.preventDefault();
+
+//         if (!email || !password) {
+//             setErrorMessage('Please enter email and password');
+//             return;
+//         }
+
+//         // Fake login data
+//         const fakeData = {
+//             token: 'test-token',
+//             refreshToken: 'refresh-token',
+//             roles: [selectedRole], // Doctor, Administrator, User
+//         };
+
+//         // Save token and roles in localStorage
+//         localStorage.setItem('token', fakeData.token);
+//         localStorage.setItem('refreshToken', fakeData.refreshToken);
+//         localStorage.setItem('userRoles', JSON.stringify(fakeData.roles));
+//         localStorage.setItem('email', email);
+
+//         // Redirect based on role
+//         if (fakeData.roles.includes('Doctor')) {
+//             navigate('/Dashboard');
+//         } else if (fakeData.roles.includes('Administrator')) {
+//             navigate('/AdminDashboard');
+//         } else if (fakeData.roles.includes('User')) {
+//             navigate('/AppointmentSchedule');
+//         } else {
+//             navigate('/');
+//         }
+//     };
+
+//     return (
+//         <div style={{
+//             display: 'flex',
+//             justifyContent: 'center',
+//             alignItems: 'center',
+//             minHeight: '100vh',
+//             width: '100vw',
+//             backgroundColor: '#f0f0f0'
+//         }}>
+//             <MDBCard style={{ width: '100%', maxWidth: '400px', borderRadius: '15px', padding: '20px' }}>
+//                 <MDBCardBody>
+//                     <h2 className="text-center mb-3">Fake Login (Test)</h2>
+//                     <form onSubmit={handleLogin}>
+//                         <MDBInput
+//                             placeholder="Email"
+//                             type="email"
+//                             value={email}
+//                             onChange={(e) => setEmail(e.target.value)}
+//                             required
+//                             className="mb-3"
+//                         />
+//                         <MDBInput
+//                             placeholder="Password"
+//                             type="password"
+//                             value={password}
+//                             onChange={(e) => setPassword(e.target.value)}
+//                             required
+//                             className="mb-3"
+//                         />
+
+//                         {/* Dropdown to choose role for testing */}
+//                         <div className="mb-3">
+//                             <label>Select Role for Test:</label>
+//                             <select
+//                                 value={selectedRole}
+//                                 onChange={(e) => setSelectedRole(e.target.value)}
+//                                 className="form-select"
+//                             >
+//                                 <option value="Doctor">Doctor</option>
+//                                 <option value="Administrator">Administrator</option>
+//                                 <option value="User">User</option>
+//                             </select>
+//                         </div>
+
+//                         {errorMessage && <div className="text-danger mb-2">{errorMessage}</div>}
+
+//                         <MDBBtn type="submit" style={{ width: '100%' }}>
+//                             Login
+//                         </MDBBtn>
+//                     </form>
+//                 </MDBCardBody>
+//             </MDBCard>
+//         </div>
+//     );
+// };
+
+// export default FakeLoginForm;
 import React, { useState } from 'react';
 import { MDBBtn, MDBCard, MDBCardBody, MDBInput } from 'mdb-react-ui-kit';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const FakeLoginForm = () => {
+const LoginForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [selectedRole, setSelectedRole] = useState('Doctor'); // Default role for testing
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
 
-    const handleLogin = (event) => {
+    const handleLogin = async (event) => {
         event.preventDefault();
-
         if (!email || !password) {
-            setErrorMessage('Please enter email and password');
+            toast.error("Please enter email and password");
             return;
         }
 
-        // Fake login data
-        const fakeData = {
-            token: 'test-token',
-            refreshToken: 'refresh-token',
-            roles: [selectedRole], // Doctor, Administrator, User
-        };
+        try {
+            const response = await axios.post('https://localhost:7107/api/User/login', {
+                Email: email,
+                Password: password
+            });
 
-        // Save token and roles in localStorage
-        localStorage.setItem('token', fakeData.token);
-        localStorage.setItem('refreshToken', fakeData.refreshToken);
-        localStorage.setItem('userRoles', JSON.stringify(fakeData.roles));
-        localStorage.setItem('email', email);
+            const data = response.data;
+            if (data.token && data.roles) {
+                localStorage.setItem('token', data.token);
+                localStorage.setItem('userRoles', JSON.stringify(data.roles));
+                localStorage.setItem('email', email);
 
-        // Redirect based on role
-        if (fakeData.roles.includes('Doctor')) {
-            navigate('/Dashboard');
-        } else if (fakeData.roles.includes('Administrator')) {
-            navigate('/AdminDashboard');
-        } else if (fakeData.roles.includes('User')) {
-            navigate('/AppointmentSchedule');
-        } else {
-            navigate('/');
+                if (data.roles.includes('Doctor')) navigate('/Dashboard');
+                else if (data.roles.includes('Administrator')) navigate('/AdminDashboard');
+                else if (data.roles.includes('User')) navigate('/AppointmentSchedule');
+                else navigate('/');
+            } else {
+                toast.error(data.message || "Login failed");
+            }
+
+        } catch (error) {
+            console.error(error);
+            toast.error("Login failed. Please try again.");
         }
     };
 
     return (
-        <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            minHeight: '100vh',
-            width: '100vw',
-            backgroundColor: '#f0f0f0'
-        }}>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', width: '100vw', backgroundColor: '#f0f0f0' }}>
             <MDBCard style={{ width: '100%', maxWidth: '400px', borderRadius: '15px', padding: '20px' }}>
                 <MDBCardBody>
-                    <h2 className="text-center mb-3">Fake Login (Test)</h2>
+                    <h2 className="text-center mb-3">Login</h2>
                     <form onSubmit={handleLogin}>
-                        <MDBInput
-                            placeholder="Email"
-                            type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                            className="mb-3"
-                        />
-                        <MDBInput
-                            placeholder="Password"
-                            type="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            required
-                            className="mb-3"
-                        />
-
-                        {/* Dropdown to choose role for testing */}
-                        <div className="mb-3">
-                            <label>Select Role for Test:</label>
-                            <select
-                                value={selectedRole}
-                                onChange={(e) => setSelectedRole(e.target.value)}
-                                className="form-select"
-                            >
-                                <option value="Doctor">Doctor</option>
-                                <option value="Administrator">Administrator</option>
-                                <option value="User">User</option>
-                            </select>
-                        </div>
-
+                        <MDBInput placeholder="Email" type="email" value={email} onChange={e => setEmail(e.target.value)} required className="mb-3" />
+                        <MDBInput placeholder="Password" type="password" value={password} onChange={e => setPassword(e.target.value)} required className="mb-3" />
                         {errorMessage && <div className="text-danger mb-2">{errorMessage}</div>}
-
-                        <MDBBtn type="submit" style={{ width: '100%' }}>
-                            Login
-                        </MDBBtn>
+                        <MDBBtn type="submit" style={{ width: '100%' }}>Login</MDBBtn>
                     </form>
                 </MDBCardBody>
             </MDBCard>
@@ -223,5 +287,6 @@ const FakeLoginForm = () => {
     );
 };
 
-export default FakeLoginForm;
+export default LoginForm;
+
 

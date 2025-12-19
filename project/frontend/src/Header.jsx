@@ -37,7 +37,7 @@ const Header = () => {
     <header>
       <Navbar className="navbar-leaf-green mb-1" variant="dark" expand="lg" >
         <Container fluid>
-          <Navbar.Brand as={NavLink} to="/">Medical</Navbar.Brand>
+          <Navbar.Brand as={NavLink} to="/">HealthFlow</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
