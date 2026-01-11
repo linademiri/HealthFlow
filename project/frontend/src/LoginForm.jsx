@@ -224,69 +224,106 @@ export default LoginForm;*/
 // };
 
 // export default FakeLoginForm;
-import React, { useState } from 'react';
-import { MDBBtn, MDBCard, MDBCardBody, MDBInput } from 'mdb-react-ui-kit';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import React, { useState } from "react";
+import { MDBBtn, MDBCard, MDBCardBody, MDBInput } from "mdb-react-ui-kit";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const LoginForm = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
-    const navigate = useNavigate();
+const FakeLoginForm = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [selectedRole, setSelectedRole] = useState("Doctor");
+  const navigate = useNavigate();
 
-    const handleLogin = async (event) => {
-        event.preventDefault();
-        if (!email || !password) {
-            toast.error("Please enter email and password");
-            return;
-        }
+  const handleLogin = (e) => {
+    e.preventDefault();
 
-        try {
-            const response = await axios.post('https://localhost:7107/api/User/login', {
-                Email: email,
-                Password: password
-            });
+    if (!email || !password) {
+      toast.error("Please enter email and password");
+      return;
+    }
 
-            const data = response.data;
-            if (data.token && data.roles) {
-                localStorage.setItem('token', data.token);
-                localStorage.setItem('userRoles', JSON.stringify(data.roles));
-                localStorage.setItem('email', email);
-
-                if (data.roles.includes('Doctor')) navigate('/Dashboard');
-                else if (data.roles.includes('Administrator')) navigate('/AdminDashboard');
-                else if (data.roles.includes('User')) navigate('/AppointmentSchedule');
-                else navigate('/');
-            } else {
-                toast.error(data.message || "Login failed");
-            }
-
-        } catch (error) {
-            console.error(error);
-            toast.error("Login failed. Please try again.");
-        }
+    // Fake login data
+    const fakeData = {
+      token: "test-token",
+      refreshToken: "refresh-token",
+      roles: [selectedRole],
     };
 
-    return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', width: '100vw', backgroundColor: '#f0f0f0' }}>
-            <MDBCard style={{ width: '100%', maxWidth: '400px', borderRadius: '15px', padding: '20px' }}>
-                <MDBCardBody>
-                    <h2 className="text-center mb-3">Login</h2>
-                    <form onSubmit={handleLogin}>
-                        <MDBInput placeholder="Email" type="email" value={email} onChange={e => setEmail(e.target.value)} required className="mb-3" />
-                        <MDBInput placeholder="Password" type="password" value={password} onChange={e => setPassword(e.target.value)} required className="mb-3" />
-                        {errorMessage && <div className="text-danger mb-2">{errorMessage}</div>}
-                        <MDBBtn type="submit" style={{ width: '100%' }}>Login</MDBBtn>
-                    </form>
-                </MDBCardBody>
-            </MDBCard>
-        </div>
-    );
+    // Save to localStorage
+    localStorage.setItem("token", fakeData.token);
+    localStorage.setItem("refreshToken", fakeData.refreshToken);
+    localStorage.setItem("userRoles", JSON.stringify(fakeData.roles));
+    localStorage.setItem("email", email);
+
+    toast.success("Login successful!");
+
+    // Redirect by role
+    if (selectedRole === "Doctor") navigate("/Dashboard");
+    else if (selectedRole === "Administrator") navigate("/AdminDashboard");
+    else if (selectedRole === "User") navigate("/AppointmentSchedule");
+    else navigate("/");
+  };
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        minHeight: "100vh",
+        backgroundColor: "#f0f0f0",
+      }}
+    >
+      <MDBCard style={{ width: "100%", maxWidth: "400px", padding: "20px" }}>
+        <MDBCardBody>
+          <h3 className="text-center mb-3">Fake Login (Testing)</h3>
+
+          <form onSubmit={handleLogin}>
+                        <MDBInput
+                            placeholder="Email"
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                            className="mb-3"
+                        />
+                        <MDBInput
+                            placeholder="Password"
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                            className="mb-3"
+                        />
+
+                        {/* Dropdown to choose role for testing */}
+                        <div className="mb-3">
+                            <label>Select Role for Test:</label>
+                            <select
+                                value={selectedRole}
+                                onChange={(e) => setSelectedRole(e.target.value)}
+                                className="form-select"
+                            >
+                                <option value="Doctor">Doctor</option>
+                                <option value="Administrator">Administrator</option>
+                                <option value="User">User</option>
+                            </select>
+                        </div>
+
+            <MDBBtn type="submit" style={{ width: "100%" }}>
+              Login
+            </MDBBtn>
+          </form>
+        </MDBCardBody>
+      </MDBCard>
+    </div>
+  );
 };
 
-export default LoginForm;
+export default FakeLoginForm;
+
+
 
 
